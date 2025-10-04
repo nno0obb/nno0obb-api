@@ -11,5 +11,4 @@ FROM python:3.12-slim
 WORKDIR /
 COPY --from=builder .venv .venv
 COPY . .
-CMD ["source", ".venv/bin/activate"]
-CMD ["python3", "main.py"]
+CMD ["source", ".venv/bin/activate", "&&", "python3", "main.py"]
