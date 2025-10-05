@@ -1,3 +1,5 @@
+from functools import lru_cache
+
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse, PlainTextResponse
 
@@ -20,5 +22,6 @@ def get_info():
     )
 
 
+@lru_cache()
 def get_etc_v1_router():
     return etc_v1_router
