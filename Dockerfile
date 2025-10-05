@@ -14,4 +14,4 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 COPY --from=builder /usr/local /usr/local
 COPY app app
-CMD ["python3", "app/main.py"]
+CMD ["python3", "main.py"]
