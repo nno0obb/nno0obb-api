@@ -13,6 +13,4 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 COPY --from=builder /usr/local /usr/local
 COPY app app
-COPY fly.toml .
-COPY README.md .
 CMD ["python3", "app/main.py"]
