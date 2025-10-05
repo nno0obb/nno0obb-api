@@ -11,6 +11,9 @@ $ python3 -m app.main
 
 ```
 $ fly deploy
+$ fly status
+$ wrangler deploy
+$ wrangler deplyments status
 ```
 
 ## # Test
