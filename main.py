@@ -1,12 +1,17 @@
 import uvicorn
 from fastapi import FastAPI
-from fastapi.responses import PlainTextResponse
+from fastapi.responses import JSONResponse, PlainTextResponse
 
 app = FastAPI()
 
 
+@app.get("/")
+def get_root():
+    return JSONResponse({"app": {"name": "nno0obb-api"}})
+
+
 @app.get("/ping")
-def read_root():
+def get_ping():
     return PlainTextResponse("pong")
 
 
