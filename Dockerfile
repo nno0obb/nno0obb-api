@@ -1,14 +1,18 @@
 FROM python:3.12-slim AS builder
 ENV PYTHONUNBUFFERED=1
-WORKDIR /
+WORKDIR /app
 
-RUN pip install poetry
-RUN poetry config virtualenvs.in-project true
+RUN pip install --upgrade pip poetry
+RUN poetry config virtualenvs.create false
 COPY pyproject.toml poetry.lock ./
-RUN poetry install --no-root
+RUN poetry install --no-root --no-interaction
+COPY app app
 
 FROM python:3.12-slim
-WORKDIR /
-COPY --from=builder .venv .venv
-COPY . .
-CMD ["python3", "main.py"]
+ENV PYTHONUNBUFFERED=1
+WORKDIR /app
+COPY --from=builder /usr/local /usr/local
+COPY app app
+COPY fly.toml .
+COPY README.md .
+CMD ["python3", "app/main.py"]
