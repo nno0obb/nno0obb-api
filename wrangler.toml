@@ -1,0 +1,7 @@
+name = "api-proxy"
+main = "worker.ts"
+compatibility_date = "2025-10-05"
+
+routes = [
+  { pattern = "www.nno0obb.xyz/api/*", zone_name = "nno0obb.xyz" }
+]
