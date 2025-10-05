@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from app.routers.v1.root import get_v1_root_router
 
 app = FastAPI(
+    title="nno0obb-api",
     docs_url="/api/docs",
     redoc_url=None,
     openapi_url="/api/openapi.json",

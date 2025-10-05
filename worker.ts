@@ -1,5 +1,5 @@
 const routes = [
-    { pattern: /^\/api\/v1\//,        base: "https://nno0obb-api.fly.dev" },
+    { pattern: /^\/api\//,        base: "https://nno0obb-api.fly.dev" },
   ];
   
 function getBase(pathname: string) {
