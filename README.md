@@ -9,16 +9,20 @@ $ python3 -m app.main
 
 ## # Deploy
 
+### fly.io
+
 ```
 $ fly deploy
 $ fly status
+$ curl -L https://nno0obb-api.fly.dev/api/ping
+pong
+```
+
+### Cloudflare
+
+```
 $ wrangler deploy
-$ wrangler deplyments status
-```
-
-## # Test
-
-```
+$ wrangler deployments status
 $ curl -L https://www.nno0obb.xyz/api/v1/ping
 pong
 ```

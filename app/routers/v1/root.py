@@ -1,9 +1,14 @@
 from functools import lru_cache
 
 from fastapi import APIRouter
-from fastapi.responses import JSONResponse, PlainTextResponse
+from fastapi.responses import JSONResponse, PlainTextResponse, RedirectResponse
 
 v1_root_router = APIRouter(prefix="/v1", tags=["root"])
+
+
+@v1_root_router.get("/")
+def get_root():
+    return RedirectResponse("/docs")
 
 
 @v1_root_router.get("/ping")
